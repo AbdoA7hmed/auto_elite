@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AUTO ELITE | إدارة معرض السيارات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="loginScreen" class="login-screen">
+  <div class="login-art"><div class="brand-mark">AE</div><div class="login-brand">AUTO <span>ELITE</span></div><p>DEALERSHIP MANAGEMENT SYSTEM</p><div class="login-car">✦</div></div>
+  <form id="loginForm" class="login-card">
+    <div class="eyebrow">مرحباً بعودتك</div><h1>تسجيل الدخول</h1><p class="muted">أدخل بيانات حسابك للوصول إلى لوحة الإدارة</p>
+    <label>اسم المستخدم<input id="loginUser" autocomplete="username" required></label>
+    <label>كلمة المرور<input id="loginPass" type="password" autocomplete="current-password" required></label>
+    <button class="btn primary full">دخول إلى النظام <span>←</span></button>
+  </form>
+</div>
+<div id="app" class="app hidden">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark small">AE</div><div><b>AUTO <span>ELITE</span></b><small>إدارة معرض السيارات</small></div></div>
+    <div class="user-mini"><div class="avatar" id="sideAvatar">م</div><div><b id="sideName">مدير المعرض</b><small id="sideRole">المدير العام</small></div><span class="online"></span></div>
+    <nav id="navigation">
+      <div class="nav-caption">القائمة الرئيسية</div>
+      <button class="nav-item active" data-page="dashboard"><i>▦</i> لوحة التحكم</button>
+      <button class="nav-item" data-page="cars"><i>🚘</i> السيارات <span class="nav-count" id="carsCount">0</span></button>
+      <button class="nav-item" data-page="sales"><i>↗</i> المبيعات</button>
+      <button class="nav-item" data-page="customers"><i>♙</i> العملاء</button>
+      <button class="nav-item" data-page="purchases"><i>＋</i> المشتريات</button>
+      <button class="nav-item" data-page="expenses"><i>－</i> المصروفات</button>
+      <button class="nav-item" data-page="reports"><i>▤</i> التقارير</button>
+      <div class="nav-caption admin-only">إدارة المعرض</div>
+      <button class="nav-item admin-only" data-page="employees"><i>♧</i> الموظفون والصلاحيات</button>
+      <button class="nav-item admin-only" data-page="activity"><i>◷</i> سجل النشاط</button>
+      <button class="nav-item admin-only" data-page="settings"><i>⚙</i> الإعدادات والنسخ الاحتياطي</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="secure-note"><span>✦</span><div><b>مساحة عملك</b><small>بيانات محفوظة على هذا الجهاز</small></div></div><button id="logoutBtn" class="logout">↪ تسجيل الخروج</button></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><div class="eyebrow" id="pageEyebrow">نظرة عامة</div><h1 id="pageTitle">لوحة التحكم</h1></div><div class="top-actions"><div class="date-chip" id="todayLabel"></div><button class="icon-btn" id="quickAdd" title="إضافة سيارة">＋</button><div class="top-avatar" id="topAvatar">م</div></div></header>
+    <section id="pageContent"></section>
+    <footer>© <span id="year"></span> AUTO ELITE <span>•</span> نظام إدارة معرض السيارات</footer>
+  </main>
+</div>
+<div id="modalRoot"></div>
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body></html>
